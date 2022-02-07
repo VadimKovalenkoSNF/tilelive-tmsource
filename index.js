@@ -9,7 +9,7 @@ var _ = require("underscore"),
     Bridge = require("@kartotherian/tilelive-bridge"),
     carto = require("carto"),
     mapnik = require("mapnik"),
-    mapnikref = require('mapnik-reference').load(mapnik.versions.mapnik),
+    // mapnikref = require('mapnik-reference').load(mapnik.versions.mapnik),
     yaml = require("js-yaml");
 
 var tm = {};
@@ -80,9 +80,9 @@ var normalize = function(data) {
     l.properties = _(l.properties).defaults(deflayer.properties);
     // Ensure datasource keys are valid.
     l.Datasource = _(l.Datasource).reduce(function(memo, val, key) {
-      if (!mapnikref.datasources[l.Datasource.type]) return memo;
+      // if (!mapnikref.datasources[l.Datasource.type]) return memo;
       if (key === 'type') memo[key] = val;
-      if (key in mapnikref.datasources[l.Datasource.type]) memo[key] = val;
+      // if (key in mapnikref.datasources[l.Datasource.type]) memo[key] = val;
       // Set a default extent value for postgis based on the SRS.
       if (l.Datasource.type === 'postgis' && key === 'extent' && !val) {
         _(tm.srs).each(function(srs, id) {
