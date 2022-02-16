@@ -15,7 +15,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@kartotherian/tilelive-bridge": "github:VadimKovalenkoSNF/tilelive-bridge#node12",
+		"@kartotherian/tilelive-bridge": "^3.1.0",
 		"carto": "^0.18.1",
 		"js-yaml": "^3.2.5",
 		"mapnik-reference": "^8.7.0",
